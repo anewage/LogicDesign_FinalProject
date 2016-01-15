@@ -5,8 +5,7 @@ module Module1;
   initial
     begin
       enter = 1'b0; number = 1'b0; total = 1'b0; clear = 1'b0; valid = 1'b1;
-      #10 total = 1'b1;
-      #10 total = ~total;
+      #10 number = ~number; 
 
     end
 endmodule
@@ -19,7 +18,7 @@ module ComputeModule(enter, number, total, clear, update, show, store, reset, va
   parameter S0 = 2'b00, S1 = 2'b01, S2 = 2'b11;
   initial
     begin
-      $monitor("State is : %b ", cs);
+ //     $monitor("State is : %b ", cs);
       update <= 1'b0;
       show <= 1'b0;
       store <= 1'b0;
@@ -49,7 +48,10 @@ module ComputeModule(enter, number, total, clear, update, show, store, reset, va
     
   always @(posedge clear)
     begin
-        reset <= ~reset;
+        update <= 1'b0;
+        show <= 1'b0;
+        store <= 1'b0;
+        reset <= 1'b1;
         cs <= S0;
     end
 
