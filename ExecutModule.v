@@ -62,6 +62,8 @@ module ExecutionModule(inNumbers, show, reset, store, update, outNumbers, errIn,
       temp = 0;
       temp2 = 0; 
       outNumbers = 0; 
+      errOut = 1'b0;
+      overflow = 1'b0;
     end
     
   always @(posedge store or negedge store)
@@ -78,8 +80,8 @@ module ExecutionModule(inNumbers, show, reset, store, update, outNumbers, errIn,
       if( inNumbers * temp > 99999 || inNumbers > 99 )
         overflow = 1'b1;
       else begin
-        temp = inNumbers * temp;
-        outNumbers = inNumbers;
+        temp2 = inNumbers * temp;
+        outNumbers = temp2; // ERROR
       end
     end
   

@@ -48,9 +48,6 @@ module ComputeModule(enter, number, total, clear, update, show, store, reset, va
     
   always @(posedge clear)
     begin
-        update <= 1'b0;
-        show <= 1'b0;
-        store <= 1'b0;
         reset <= 1'b1;
         cs <= S0;
     end
