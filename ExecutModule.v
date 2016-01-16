@@ -48,12 +48,14 @@ module ExecutionModule(inNumbers, show, reset, store, update, outNumbers, errIn,
     end
   
   always @(posedge show or negedge show)
-    begin
+  begin
+      if (~errOut)    begin
       temp2 = total + temp;
       total = temp2;
       temp = 0;
       temp2 = 0;
       outNumbers = total;
+  end
     end
   
   always @(posedge reset or negedge reset)
@@ -62,7 +64,6 @@ module ExecutionModule(inNumbers, show, reset, store, update, outNumbers, errIn,
       temp = 0;
       temp2 = 0; 
       outNumbers = 0; 
-      errOut = 1'b0;
       overflow = 1'b0;
     end
     
@@ -81,7 +82,7 @@ module ExecutionModule(inNumbers, show, reset, store, update, outNumbers, errIn,
         overflow = 1'b1;
       else begin
         temp2 = inNumbers * temp;
-        outNumbers = temp2; // ERROR
+        temp = temp2; // ERROR
       end
     end
   
