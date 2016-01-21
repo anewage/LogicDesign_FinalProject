@@ -1,0 +1,1407 @@
+TimeQuest Timing Analyzer report for LogicFinalFPGA
+Sun Jan 17 14:14:54 2016
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Clocks
+  4. Slow Model Fmax Summary
+  5. Slow Model Setup Summary
+  6. Slow Model Hold Summary
+  7. Slow Model Recovery Summary
+  8. Slow Model Removal Summary
+  9. Slow Model Minimum Pulse Width Summary
+ 10. Slow Model Setup: 'clk'
+ 11. Slow Model Hold: 'clk'
+ 12. Slow Model Minimum Pulse Width: 'clk'
+ 13. Setup Times
+ 14. Hold Times
+ 15. Clock to Output Times
+ 16. Minimum Clock to Output Times
+ 17. Fast Model Setup Summary
+ 18. Fast Model Hold Summary
+ 19. Fast Model Recovery Summary
+ 20. Fast Model Removal Summary
+ 21. Fast Model Minimum Pulse Width Summary
+ 22. Fast Model Setup: 'clk'
+ 23. Fast Model Hold: 'clk'
+ 24. Fast Model Minimum Pulse Width: 'clk'
+ 25. Setup Times
+ 26. Hold Times
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Multicorner Timing Analysis Summary
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Setup Transfers
+ 35. Hold Transfers
+ 36. Report TCCS
+ 37. Report RSKM
+ 38. Unconstrained Paths
+ 39. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; LogicFinalFPGA                                                    ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 26.62 MHz ; 26.62 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -36.563 ; -1664.759     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.423 ; -211.224              ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                            ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                         ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; -36.563 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 37.624     ;
+; -36.527 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 37.588     ;
+; -36.455 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 37.516     ;
+; -36.348 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 37.409     ;
+; -36.309 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 37.370     ;
+; -35.357 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 36.418     ;
+; -35.138 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 36.199     ;
+; -35.102 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 36.163     ;
+; -35.030 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 36.091     ;
+; -34.923 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 35.984     ;
+; -34.884 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 35.945     ;
+; -34.244 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 35.294     ;
+; -34.208 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 35.258     ;
+; -34.169 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 35.219     ;
+; -34.069 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 35.119     ;
+; -34.053 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 35.103     ;
+; -33.932 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 34.993     ;
+; -33.907 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 34.957     ;
+; -33.843 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 34.893     ;
+; -32.930 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 33.994     ;
+; -32.894 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 33.958     ;
+; -32.879 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 33.940     ;
+; -32.822 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 33.886     ;
+; -32.715 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 33.779     ;
+; -32.676 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 33.740     ;
+; -32.656 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.706     ;
+; -32.620 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.670     ;
+; -32.581 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.631     ;
+; -32.481 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.531     ;
+; -32.465 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.515     ;
+; -32.329 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.379     ;
+; -32.319 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.369     ;
+; -32.255 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 33.305     ;
+; -31.724 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 32.788     ;
+; -31.454 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 32.515     ;
+; -30.821 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 31.885     ;
+; -30.785 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 31.849     ;
+; -30.741 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 31.791     ;
+; -30.713 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 31.777     ;
+; -30.606 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 31.670     ;
+; -30.567 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 31.631     ;
+; -30.407 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 31.468     ;
+; -30.329 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.014      ; 31.379     ;
+; -29.931 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.984     ;
+; -29.907 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.960     ;
+; -29.841 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.894     ;
+; -29.817 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.870     ;
+; -29.812 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 30.862     ;
+; -29.776 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 30.826     ;
+; -29.756 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.809     ;
+; -29.737 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 30.787     ;
+; -29.729 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.782     ;
+; -29.705 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.758     ;
+; -29.666 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.719     ;
+; -29.637 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 30.687     ;
+; -29.621 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 30.671     ;
+; -29.615 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 30.679     ;
+; -29.554 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.017      ; 30.607     ;
+; -29.475 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 30.525     ;
+; -29.411 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 30.461     ;
+; -29.246 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 30.310     ;
+; -28.982 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 30.043     ;
+; -28.741 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.014      ; 29.791     ;
+; -28.470 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.017      ; 29.523     ;
+; -28.446 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.017      ; 29.499     ;
+; -28.295 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.017      ; 29.348     ;
+; -28.243 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 29.291     ;
+; -27.897 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.947     ;
+; -27.833 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.859     ;
+; -27.763 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.012     ; 28.787     ;
+; -27.718 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.768     ;
+; -27.715 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.741     ;
+; -27.682 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.732     ;
+; -27.643 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.693     ;
+; -27.572 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.598     ;
+; -27.543 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.593     ;
+; -27.527 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.577     ;
+; -27.493 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.519     ;
+; -27.441 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.467     ;
+; -27.431 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.457     ;
+; -27.422 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.025      ; 28.483     ;
+; -27.410 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.436     ;
+; -27.381 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.431     ;
+; -27.317 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 28.367     ;
+; -27.299 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.325     ;
+; -27.197 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.010     ; 28.223     ;
+; -27.137 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.028      ; 28.201     ;
+; -26.774 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.028      ; 27.838     ;
+; -26.655 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 27.703     ;
+; -26.073 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.017      ; 27.126     ;
+; -26.049 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.017      ; 27.102     ;
+; -25.997 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.025      ; 27.058     ;
+; -25.956 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.016     ; 26.976     ;
+; -25.898 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.017      ; 26.951     ;
+; -25.897 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.014      ; 26.947     ;
+; -25.886 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.018     ; 26.904     ;
+; -25.869 ; ExecutionModule:em|outNumbers[6]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.012     ; 26.893     ;
+; -25.838 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.016     ; 26.858     ;
+; -25.803 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.014      ; 26.853     ;
+; -25.695 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.016     ; 26.715     ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                    ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; ComputeModule:cm|update                      ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; ComputeModule:cm|store                       ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; ComputeModule:cm|reset                       ; ComputeModule:cm|reset                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; ComputeModule:cm|show                        ; ComputeModule:cm|show                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.522 ; ComputeModule:cm|changes[1]                  ; ComputeModule:cm|show                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.528 ; ComputeModule:cm|changes[2]                  ; ComputeModule:cm|cs.S1                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.545 ; Controller:cntrlr|numberOut                  ; ComputeModule:cm|changes[0]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.811      ;
+; 0.566 ; BinaryToBCD:bin2BCD|outBCD[10]               ; BCDto7Seg:thirdDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.832      ;
+; 0.568 ; BinaryToBCD:bin2BCD|outBCD[10]               ; BCDto7Seg:thirdDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.834      ;
+; 0.582 ; BinaryToBCD:bin2BCD|outBCD[17]               ; BCDto7Seg:fifthDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.848      ;
+; 0.585 ; BinaryToBCD:bin2BCD|outBCD[17]               ; BCDto7Seg:fifthDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.851      ;
+; 0.588 ; BinaryToBCD:bin2BCD|outBCD[17]               ; BCDto7Seg:fifthDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.854      ;
+; 0.595 ; BinaryToBCD:bin2BCD|outBCD[17]               ; BCDto7Seg:fifthDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.861      ;
+; 0.595 ; BinaryToBCD:bin2BCD|outBCD[17]               ; BCDto7Seg:fifthDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.861      ;
+; 0.670 ; ComputeModule:cm|show                        ; ExecutionModule:em|changes[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.674 ; BinaryToBCD:bin2BCD|outBCD[19]               ; BCDto7Seg:fifthDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.940      ;
+; 0.677 ; BinaryToBCD:bin2BCD|outBCD[15]               ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.943      ;
+; 0.677 ; BinaryToBCD:bin2BCD|outBCD[19]               ; BCDto7Seg:fifthDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.943      ;
+; 0.678 ; BinaryToBCD:bin2BCD|outBCD[15]               ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.944      ;
+; 0.679 ; ComputeModule:cm|store                       ; ExecutionModule:em|changes[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.945      ;
+; 0.681 ; BinaryToBCD:bin2BCD|outBCD[15]               ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.947      ;
+; 0.681 ; BinaryToBCD:bin2BCD|outBCD[19]               ; BCDto7Seg:fifthDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.947      ;
+; 0.686 ; Controller:cntrlr|enterOut                   ; ComputeModule:cm|cs.S1                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.696 ; Controller:cntrlr|enterOut                   ; ComputeModule:cm|changes[2]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.962      ;
+; 0.757 ; ComputeModule:cm|reset                       ; ExecutionModule:em|changes[1]                ; clk          ; clk         ; 0.000        ; -0.001     ; 1.022      ;
+; 0.760 ; BinaryToBCD:bin2BCD|outBCD[8]                ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.026      ;
+; 0.761 ; BinaryToBCD:bin2BCD|outBCD[8]                ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.027      ;
+; 0.762 ; BinaryToBCD:bin2BCD|outBCD[8]                ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.028      ;
+; 0.804 ; BinaryToBCD:bin2BCD|outBCD[14]               ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.070      ;
+; 0.807 ; BinaryToBCD:bin2BCD|outBCD[14]               ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.073      ;
+; 0.810 ; ExecutionModule:em|changes[3]                ; ExecutionModule:em|overflow                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.811 ; BinaryToBCD:bin2BCD|outBCD[10]               ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.077      ;
+; 0.811 ; BinaryToBCD:bin2BCD|outBCD[10]               ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.077      ;
+; 0.815 ; BinaryToBCD:bin2BCD|outBCD[11]               ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.816 ; BinaryToBCD:bin2BCD|outBCD[11]               ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.816 ; BinaryToBCD:bin2BCD|outBCD[11]               ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.825 ; Controller:cntrlr|enterOut                   ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.828 ; BinaryToBCD:bin2BCD|outBCD[10]               ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.094      ;
+; 0.829 ; BinaryToBCD:bin2BCD|outBCD[18]               ; BCDto7Seg:fifthDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.095      ;
+; 0.831 ; Controller:cntrlr|enterOut                   ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; BinaryToBCD:bin2BCD|outBCD[13]               ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; BinaryToBCD:bin2BCD|outBCD[14]               ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.835 ; BinaryToBCD:bin2BCD|outBCD[14]               ; BCDto7Seg:fourthDigit|sevenSegOut[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.835 ; BinaryToBCD:bin2BCD|outBCD[14]               ; BCDto7Seg:fourthDigit|sevenSegOut[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.835 ; BinaryToBCD:bin2BCD|outBCD[18]               ; BCDto7Seg:fifthDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.836 ; BinaryToBCD:bin2BCD|outBCD[13]               ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.102      ;
+; 0.838 ; ComputeModule:cm|changes[3]                  ; InputModule:im|outputBinNum[10]~_Duplicate_1 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.840 ; ComputeModule:cm|changes[3]                  ; InputModule:im|outputBinNum[9]~_Duplicate_1  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.106      ;
+; 0.840 ; BinaryToBCD:bin2BCD|outBCD[13]               ; BCDto7Seg:fourthDigit|sevenSegOut[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.106      ;
+; 0.843 ; ComputeModule:cm|changes[3]                  ; InputModule:im|outputBinNum[12]~_Duplicate_1 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.109      ;
+; 0.843 ; ComputeModule:cm|changes[3]                  ; InputModule:im|outputBinNum[8]~_Duplicate_1  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.109      ;
+; 0.845 ; BinaryToBCD:bin2BCD|outBCD[13]               ; BCDto7Seg:fourthDigit|sevenSegOut[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.846 ; InputModule:im|validInputs[6]                ; InputModule:im|changes[6]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.112      ;
+; 0.855 ; BinaryToBCD:bin2BCD|outBCD[18]               ; BCDto7Seg:fifthDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.121      ;
+; 0.857 ; BinaryToBCD:bin2BCD|outBCD[18]               ; BCDto7Seg:fifthDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.123      ;
+; 0.863 ; BinaryToBCD:bin2BCD|outBCD[18]               ; BCDto7Seg:fifthDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.129      ;
+; 0.869 ; ComputeModule:cm|changes[3]                  ; InputModule:im|outputBinNum[11]~_Duplicate_1 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.135      ;
+; 0.872 ; BinaryToBCD:bin2BCD|outBCD[13]               ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.138      ;
+; 0.891 ; InputModule:im|validInputs[8]                ; InputModule:im|changes[8]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.157      ;
+; 0.891 ; BinaryToBCD:bin2BCD|outBCD[9]                ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.157      ;
+; 0.899 ; InputModule:im|validInputs[9]                ; InputModule:im|tempOut[0]                    ; clk          ; clk         ; 0.000        ; -0.001     ; 1.164      ;
+; 0.900 ; BinaryToBCD:bin2BCD|outBCD[9]                ; BCDto7Seg:thirdDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 0.901 ; BinaryToBCD:bin2BCD|outBCD[9]                ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.167      ;
+; 0.901 ; BinaryToBCD:bin2BCD|outBCD[9]                ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.167      ;
+; 0.902 ; BinaryToBCD:bin2BCD|outBCD[9]                ; BCDto7Seg:thirdDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.168      ;
+; 0.912 ; InputModule:im|validInputs[9]                ; InputModule:im|changes[9]                    ; clk          ; clk         ; 0.000        ; -0.001     ; 1.177      ;
+; 0.919 ; InputModule:im|validInputs[0]                ; InputModule:im|changes[0]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.185      ;
+; 0.928 ; ExecutionModule:em|temp[13]                  ; ExecutionModule:em|temp[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.194      ;
+; 0.944 ; ComputeModule:cm|changes[0]                  ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.210      ;
+; 0.948 ; ComputeModule:cm|changes[0]                  ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.214      ;
+; 0.970 ; InputModule:im|outputBinNum[4]~_Duplicate_1  ; ExecutionModule:em|temp[4]                   ; clk          ; clk         ; 0.000        ; -0.004     ; 1.232      ;
+; 1.005 ; ExecutionModule:em|overflow                  ; ExecutionModule:em|errOut                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
+; 1.010 ; Controller:cntrlr|err                        ; ExecutionModule:em|errOut                    ; clk          ; clk         ; 0.000        ; 0.009      ; 1.285      ;
+; 1.027 ; ComputeModule:cm|changes[2]                  ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.293      ;
+; 1.029 ; ComputeModule:cm|changes[2]                  ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.295      ;
+; 1.032 ; BinaryToBCD:bin2BCD|outBCD[8]                ; BCDto7Seg:thirdDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.034 ; BinaryToBCD:bin2BCD|outBCD[8]                ; BCDto7Seg:thirdDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.300      ;
+; 1.056 ; InputModule:im|changes[9]                    ; InputModule:im|tempOut[0]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.322      ;
+; 1.058 ; BinaryToBCD:bin2BCD|outBCD[12]               ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; -0.006     ; 1.318      ;
+; 1.058 ; BinaryToBCD:bin2BCD|outBCD[12]               ; BCDto7Seg:fourthDigit|sevenSegOut[3]         ; clk          ; clk         ; 0.000        ; -0.006     ; 1.318      ;
+; 1.058 ; BinaryToBCD:bin2BCD|outBCD[12]               ; BCDto7Seg:fourthDigit|sevenSegOut[4]         ; clk          ; clk         ; 0.000        ; -0.006     ; 1.318      ;
+; 1.060 ; ExecutionModule:em|temp[10]                  ; ExecutionModule:em|temp[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.326      ;
+; 1.063 ; BinaryToBCD:bin2BCD|outBCD[12]               ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; -0.006     ; 1.323      ;
+; 1.063 ; BinaryToBCD:bin2BCD|outBCD[12]               ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; -0.006     ; 1.323      ;
+; 1.071 ; InputModule:im|validInputs[3]                ; InputModule:im|changes[3]                    ; clk          ; clk         ; 0.000        ; 0.001      ; 1.338      ;
+; 1.083 ; InputModule:im|validInputs[1]                ; InputModule:im|changes[1]                    ; clk          ; clk         ; 0.000        ; 0.001      ; 1.350      ;
+; 1.085 ; InputModule:im|changes[9]                    ; InputModule:im|counter[2]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.351      ;
+; 1.090 ; Controller:cntrlr|clearOut                   ; ComputeModule:cm|cs.S2                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.094 ; InputModule:im|validInputs[2]                ; InputModule:im|changes[2]                    ; clk          ; clk         ; 0.000        ; 0.001      ; 1.361      ;
+; 1.094 ; ComputeModule:cm|cs.S1                       ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.360      ;
+; 1.098 ; ComputeModule:cm|cs.S1                       ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.364      ;
+; 1.115 ; InputModule:im|changes[9]                    ; InputModule:im|counter[0]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.381      ;
+; 1.139 ; Controller:cntrlr|totalOut                   ; ComputeModule:cm|changes[1]                  ; clk          ; clk         ; 0.000        ; 0.009      ; 1.414      ;
+; 1.149 ; ComputeModule:cm|update                      ; ExecutionModule:em|overflow                  ; clk          ; clk         ; 0.000        ; 0.009      ; 1.424      ;
+; 1.153 ; ExecutionModule:em|outNumbers[0]             ; BinaryToBCD:bin2BCD|outBCD[0]                ; clk          ; clk         ; 0.000        ; 0.026      ; 1.445      ;
+; 1.153 ; BinaryToBCD:bin2BCD|outBCD[0]                ; BCDto7Seg:firstDigit|sevenSegOut[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.419      ;
+; 1.154 ; ComputeModule:cm|update                      ; ExecutionModule:em|changes[3]                ; clk          ; clk         ; 0.000        ; 0.009      ; 1.429      ;
+; 1.164 ; BinaryToBCD:bin2BCD|outBCD[0]                ; BCDto7Seg:firstDigit|sevenSegOut[1]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.430      ;
+; 1.170 ; BinaryToBCD:bin2BCD|outBCD[17]               ; BCDto7Seg:fifthDigit|sevenSegOut[1]          ; clk          ; clk         ; 0.000        ; -0.001     ; 1.435      ;
+; 1.184 ; InputModule:im|outputBinNum[11]~_Duplicate_1 ; ExecutionModule:em|temp[11]                  ; clk          ; clk         ; 0.000        ; -0.006     ; 1.444      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[0]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[0]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[10]        ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[10]        ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[11]        ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[11]        ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[12]        ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[12]        ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[13]        ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[13]        ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[1]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[1]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[2]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[2]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[3]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[3]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[4]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[4]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[5]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[5]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[6]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[6]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[7]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[7]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[8]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[8]         ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[9]         ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[9]         ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:sixthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:sixthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:sixthDigit|sevenSegOut[2]    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; clear         ; clk        ; 4.090 ; 4.090 ; Rise       ; clk             ;
+; enter         ; clk        ; 4.588 ; 4.588 ; Rise       ; clk             ;
+; inputNums[*]  ; clk        ; 2.420 ; 2.420 ; Rise       ; clk             ;
+;  inputNums[0] ; clk        ; 1.148 ; 1.148 ; Rise       ; clk             ;
+;  inputNums[1] ; clk        ; 2.054 ; 2.054 ; Rise       ; clk             ;
+;  inputNums[2] ; clk        ; 1.792 ; 1.792 ; Rise       ; clk             ;
+;  inputNums[3] ; clk        ; 1.870 ; 1.870 ; Rise       ; clk             ;
+;  inputNums[4] ; clk        ; 2.005 ; 2.005 ; Rise       ; clk             ;
+;  inputNums[5] ; clk        ; 1.911 ; 1.911 ; Rise       ; clk             ;
+;  inputNums[6] ; clk        ; 1.481 ; 1.481 ; Rise       ; clk             ;
+;  inputNums[7] ; clk        ; 2.420 ; 2.420 ; Rise       ; clk             ;
+;  inputNums[8] ; clk        ; 2.029 ; 2.029 ; Rise       ; clk             ;
+;  inputNums[9] ; clk        ; 2.046 ; 2.046 ; Rise       ; clk             ;
+; number        ; clk        ; 4.439 ; 4.439 ; Rise       ; clk             ;
+; total         ; clk        ; 4.365 ; 4.365 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; clear         ; clk        ; -3.859 ; -3.859 ; Rise       ; clk             ;
+; enter         ; clk        ; -4.319 ; -4.319 ; Rise       ; clk             ;
+; inputNums[*]  ; clk        ; 0.365  ; 0.365  ; Rise       ; clk             ;
+;  inputNums[0] ; clk        ; -0.054 ; -0.054 ; Rise       ; clk             ;
+;  inputNums[1] ; clk        ; -0.217 ; -0.217 ; Rise       ; clk             ;
+;  inputNums[2] ; clk        ; -0.226 ; -0.226 ; Rise       ; clk             ;
+;  inputNums[3] ; clk        ; 0.188  ; 0.188  ; Rise       ; clk             ;
+;  inputNums[4] ; clk        ; -0.155 ; -0.155 ; Rise       ; clk             ;
+;  inputNums[5] ; clk        ; -0.620 ; -0.620 ; Rise       ; clk             ;
+;  inputNums[6] ; clk        ; 0.365  ; 0.365  ; Rise       ; clk             ;
+;  inputNums[7] ; clk        ; -0.574 ; -0.574 ; Rise       ; clk             ;
+;  inputNums[8] ; clk        ; -0.656 ; -0.656 ; Rise       ; clk             ;
+;  inputNums[9] ; clk        ; -0.330 ; -0.330 ; Rise       ; clk             ;
+; number        ; clk        ; -4.202 ; -4.202 ; Rise       ; clk             ;
+; total         ; clk        ; -4.081 ; -4.081 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; errOut          ; clk        ; 7.368 ; 7.368 ; Rise       ; clk             ;
+; outNumbers[*]   ; clk        ; 8.694 ; 8.694 ; Rise       ; clk             ;
+;  outNumbers[0]  ; clk        ; 7.318 ; 7.318 ; Rise       ; clk             ;
+;  outNumbers[1]  ; clk        ; 7.925 ; 7.925 ; Rise       ; clk             ;
+;  outNumbers[2]  ; clk        ; 7.912 ; 7.912 ; Rise       ; clk             ;
+;  outNumbers[3]  ; clk        ; 7.303 ; 7.303 ; Rise       ; clk             ;
+;  outNumbers[4]  ; clk        ; 7.320 ; 7.320 ; Rise       ; clk             ;
+;  outNumbers[5]  ; clk        ; 7.054 ; 7.054 ; Rise       ; clk             ;
+;  outNumbers[6]  ; clk        ; 7.049 ; 7.049 ; Rise       ; clk             ;
+;  outNumbers[7]  ; clk        ; 8.685 ; 8.685 ; Rise       ; clk             ;
+;  outNumbers[8]  ; clk        ; 8.147 ; 8.147 ; Rise       ; clk             ;
+;  outNumbers[9]  ; clk        ; 7.528 ; 7.528 ; Rise       ; clk             ;
+;  outNumbers[10] ; clk        ; 7.969 ; 7.969 ; Rise       ; clk             ;
+;  outNumbers[11] ; clk        ; 8.061 ; 8.061 ; Rise       ; clk             ;
+;  outNumbers[12] ; clk        ; 8.694 ; 8.694 ; Rise       ; clk             ;
+;  outNumbers[13] ; clk        ; 7.767 ; 7.767 ; Rise       ; clk             ;
+;  outNumbers[14] ; clk        ; 8.478 ; 8.478 ; Rise       ; clk             ;
+;  outNumbers[15] ; clk        ; 7.961 ; 7.961 ; Rise       ; clk             ;
+;  outNumbers[16] ; clk        ; 8.323 ; 8.323 ; Rise       ; clk             ;
+;  outNumbers[17] ; clk        ; 8.392 ; 8.392 ; Rise       ; clk             ;
+;  outNumbers[18] ; clk        ; 7.675 ; 7.675 ; Rise       ; clk             ;
+;  outNumbers[19] ; clk        ; 8.128 ; 8.128 ; Rise       ; clk             ;
+;  outNumbers[20] ; clk        ; 7.873 ; 7.873 ; Rise       ; clk             ;
+;  outNumbers[21] ; clk        ; 7.549 ; 7.549 ; Rise       ; clk             ;
+;  outNumbers[22] ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  outNumbers[23] ; clk        ; 7.034 ; 7.034 ; Rise       ; clk             ;
+;  outNumbers[24] ; clk        ; 7.972 ; 7.972 ; Rise       ; clk             ;
+;  outNumbers[25] ; clk        ; 7.961 ; 7.961 ; Rise       ; clk             ;
+;  outNumbers[26] ; clk        ; 7.198 ; 7.198 ; Rise       ; clk             ;
+;  outNumbers[27] ; clk        ; 7.945 ; 7.945 ; Rise       ; clk             ;
+;  outNumbers[28] ; clk        ; 7.053 ; 7.053 ; Rise       ; clk             ;
+;  outNumbers[29] ; clk        ; 7.528 ; 7.528 ; Rise       ; clk             ;
+;  outNumbers[30] ; clk        ; 7.568 ; 7.568 ; Rise       ; clk             ;
+;  outNumbers[31] ; clk        ; 7.750 ; 7.750 ; Rise       ; clk             ;
+;  outNumbers[32] ; clk        ; 7.764 ; 7.764 ; Rise       ; clk             ;
+;  outNumbers[33] ; clk        ; 7.763 ; 7.763 ; Rise       ; clk             ;
+;  outNumbers[34] ; clk        ; 7.664 ; 7.664 ; Rise       ; clk             ;
+;  outNumbers[36] ; clk        ; 6.368 ; 6.368 ; Rise       ; clk             ;
+;  outNumbers[37] ; clk        ; 6.354 ; 6.354 ; Rise       ; clk             ;
+;  outNumbers[41] ; clk        ; 6.077 ; 6.077 ; Rise       ; clk             ;
+;  outNumbers[43] ; clk        ; 6.083 ; 6.083 ; Rise       ; clk             ;
+;  outNumbers[44] ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
+;  outNumbers[48] ; clk        ; 6.596 ; 6.596 ; Rise       ; clk             ;
+;  outNumbers[50] ; clk        ; 6.634 ; 6.634 ; Rise       ; clk             ;
+;  outNumbers[51] ; clk        ; 6.628 ; 6.628 ; Rise       ; clk             ;
+;  outNumbers[55] ; clk        ; 6.642 ; 6.642 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; errOut          ; clk        ; 7.368 ; 7.368 ; Rise       ; clk             ;
+; outNumbers[*]   ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
+;  outNumbers[0]  ; clk        ; 7.318 ; 7.318 ; Rise       ; clk             ;
+;  outNumbers[1]  ; clk        ; 7.925 ; 7.925 ; Rise       ; clk             ;
+;  outNumbers[2]  ; clk        ; 7.912 ; 7.912 ; Rise       ; clk             ;
+;  outNumbers[3]  ; clk        ; 7.303 ; 7.303 ; Rise       ; clk             ;
+;  outNumbers[4]  ; clk        ; 7.320 ; 7.320 ; Rise       ; clk             ;
+;  outNumbers[5]  ; clk        ; 7.054 ; 7.054 ; Rise       ; clk             ;
+;  outNumbers[6]  ; clk        ; 7.049 ; 7.049 ; Rise       ; clk             ;
+;  outNumbers[7]  ; clk        ; 8.685 ; 8.685 ; Rise       ; clk             ;
+;  outNumbers[8]  ; clk        ; 8.147 ; 8.147 ; Rise       ; clk             ;
+;  outNumbers[9]  ; clk        ; 7.528 ; 7.528 ; Rise       ; clk             ;
+;  outNumbers[10] ; clk        ; 7.969 ; 7.969 ; Rise       ; clk             ;
+;  outNumbers[11] ; clk        ; 8.061 ; 8.061 ; Rise       ; clk             ;
+;  outNumbers[12] ; clk        ; 8.694 ; 8.694 ; Rise       ; clk             ;
+;  outNumbers[13] ; clk        ; 7.767 ; 7.767 ; Rise       ; clk             ;
+;  outNumbers[14] ; clk        ; 8.478 ; 8.478 ; Rise       ; clk             ;
+;  outNumbers[15] ; clk        ; 7.961 ; 7.961 ; Rise       ; clk             ;
+;  outNumbers[16] ; clk        ; 8.323 ; 8.323 ; Rise       ; clk             ;
+;  outNumbers[17] ; clk        ; 8.392 ; 8.392 ; Rise       ; clk             ;
+;  outNumbers[18] ; clk        ; 7.675 ; 7.675 ; Rise       ; clk             ;
+;  outNumbers[19] ; clk        ; 8.128 ; 8.128 ; Rise       ; clk             ;
+;  outNumbers[20] ; clk        ; 7.873 ; 7.873 ; Rise       ; clk             ;
+;  outNumbers[21] ; clk        ; 7.549 ; 7.549 ; Rise       ; clk             ;
+;  outNumbers[22] ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  outNumbers[23] ; clk        ; 7.034 ; 7.034 ; Rise       ; clk             ;
+;  outNumbers[24] ; clk        ; 7.972 ; 7.972 ; Rise       ; clk             ;
+;  outNumbers[25] ; clk        ; 7.961 ; 7.961 ; Rise       ; clk             ;
+;  outNumbers[26] ; clk        ; 7.198 ; 7.198 ; Rise       ; clk             ;
+;  outNumbers[27] ; clk        ; 7.945 ; 7.945 ; Rise       ; clk             ;
+;  outNumbers[28] ; clk        ; 7.053 ; 7.053 ; Rise       ; clk             ;
+;  outNumbers[29] ; clk        ; 7.528 ; 7.528 ; Rise       ; clk             ;
+;  outNumbers[30] ; clk        ; 7.568 ; 7.568 ; Rise       ; clk             ;
+;  outNumbers[31] ; clk        ; 7.750 ; 7.750 ; Rise       ; clk             ;
+;  outNumbers[32] ; clk        ; 7.764 ; 7.764 ; Rise       ; clk             ;
+;  outNumbers[33] ; clk        ; 7.763 ; 7.763 ; Rise       ; clk             ;
+;  outNumbers[34] ; clk        ; 7.664 ; 7.664 ; Rise       ; clk             ;
+;  outNumbers[36] ; clk        ; 6.368 ; 6.368 ; Rise       ; clk             ;
+;  outNumbers[37] ; clk        ; 6.354 ; 6.354 ; Rise       ; clk             ;
+;  outNumbers[41] ; clk        ; 6.077 ; 6.077 ; Rise       ; clk             ;
+;  outNumbers[43] ; clk        ; 6.083 ; 6.083 ; Rise       ; clk             ;
+;  outNumbers[44] ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
+;  outNumbers[48] ; clk        ; 6.596 ; 6.596 ; Rise       ; clk             ;
+;  outNumbers[50] ; clk        ; 6.634 ; 6.634 ; Rise       ; clk             ;
+;  outNumbers[51] ; clk        ; 6.628 ; 6.628 ; Rise       ; clk             ;
+;  outNumbers[55] ; clk        ; 6.642 ; 6.642 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -15.402 ; -641.950      ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.519 ; -213.912              ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                            ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                         ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; -15.402 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 16.454     ;
+; -15.379 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 16.431     ;
+; -15.344 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 16.396     ;
+; -15.295 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 16.347     ;
+; -15.271 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 16.323     ;
+; -14.925 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 15.977     ;
+; -14.774 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 15.826     ;
+; -14.751 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 15.803     ;
+; -14.716 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 15.768     ;
+; -14.667 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 15.719     ;
+; -14.643 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 15.695     ;
+; -14.564 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 15.608     ;
+; -14.537 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 15.581     ;
+; -14.523 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 15.567     ;
+; -14.480 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 15.524     ;
+; -14.457 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 15.501     ;
+; -14.397 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 15.441     ;
+; -14.367 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 15.411     ;
+; -14.297 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 15.349     ;
+; -13.932 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.976     ;
+; -13.905 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.949     ;
+; -13.891 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.935     ;
+; -13.852 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 14.907     ;
+; -13.848 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.892     ;
+; -13.829 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 14.884     ;
+; -13.827 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 14.879     ;
+; -13.825 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.869     ;
+; -13.794 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 14.849     ;
+; -13.765 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.809     ;
+; -13.745 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 14.800     ;
+; -13.742 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.786     ;
+; -13.735 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.779     ;
+; -13.721 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 14.776     ;
+; -13.375 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 14.430     ;
+; -13.199 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 14.251     ;
+; -13.110 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 14.154     ;
+; -12.954 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.023      ; 14.009     ;
+; -12.931 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.023      ; 13.986     ;
+; -12.896 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.023      ; 13.951     ;
+; -12.847 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.023      ; 13.902     ;
+; -12.826 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.012      ; 13.870     ;
+; -12.823 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.023      ; 13.878     ;
+; -12.743 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 13.795     ;
+; -12.648 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.692     ;
+; -12.621 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.665     ;
+; -12.607 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.651     ;
+; -12.564 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.608     ;
+; -12.541 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.585     ;
+; -12.481 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.525     ;
+; -12.477 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.023      ; 13.532     ;
+; -12.451 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.495     ;
+; -12.277 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 13.332     ;
+; -12.224 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.269     ;
+; -12.223 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.268     ;
+; -12.204 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.249     ;
+; -12.203 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.248     ;
+; -12.194 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.012      ; 13.238     ;
+; -12.143 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.188     ;
+; -12.123 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.168     ;
+; -12.121 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.166     ;
+; -12.120 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.165     ;
+; -12.115 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 13.167     ;
+; -12.040 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.013      ; 13.085     ;
+; -11.858 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[8]  ; clk          ; clk         ; 1.000        ; 0.010      ; 12.900     ;
+; -11.826 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.870     ;
+; -11.776 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.797     ;
+; -11.758 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.013     ; 12.777     ;
+; -11.723 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.744     ;
+; -11.709 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.753     ;
+; -11.682 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.726     ;
+; -11.668 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.712     ;
+; -11.653 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.674     ;
+; -11.625 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.669     ;
+; -11.622 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.643     ;
+; -11.613 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[1]  ; clk          ; clk         ; 1.000        ; 0.013      ; 12.658     ;
+; -11.612 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[3]  ; clk          ; clk         ; 1.000        ; 0.013      ; 12.657     ;
+; -11.602 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.646     ;
+; -11.574 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.595     ;
+; -11.572 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.593     ;
+; -11.564 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.585     ;
+; -11.542 ; ExecutionModule:em|outNumbers[14] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.586     ;
+; -11.532 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[2]  ; clk          ; clk         ; 1.000        ; 0.013      ; 12.577     ;
+; -11.512 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.556     ;
+; -11.490 ; ExecutionModule:em|outNumbers[16] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.511     ;
+; -11.463 ; ExecutionModule:em|outNumbers[13] ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.011     ; 12.484     ;
+; -11.448 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[4]  ; clk          ; clk         ; 1.000        ; 0.020      ; 12.500     ;
+; -11.379 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[7]  ; clk          ; clk         ; 1.000        ; 0.023      ; 12.434     ;
+; -11.226 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[9]  ; clk          ; clk         ; 1.000        ; 0.010      ; 12.268     ;
+; -11.193 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[6]  ; clk          ; clk         ; 1.000        ; 0.023      ; 12.248     ;
+; -10.979 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.017     ; 11.994     ;
+; -10.961 ; ExecutionModule:em|outNumbers[7]  ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.019     ; 11.974     ;
+; -10.933 ; ExecutionModule:em|outNumbers[6]  ; BinaryToBCD:bin2BCD|outBCD[12] ; clk          ; clk         ; 1.000        ; -0.013     ; 11.952     ;
+; -10.926 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.017     ; 11.941     ;
+; -10.910 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[10] ; clk          ; clk         ; 1.000        ; 0.012      ; 11.954     ;
+; -10.887 ; ExecutionModule:em|outNumbers[9]  ; BinaryToBCD:bin2BCD|outBCD[11] ; clk          ; clk         ; 1.000        ; 0.012      ; 11.931     ;
+; -10.856 ; ExecutionModule:em|outNumbers[10] ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.017     ; 11.871     ;
+; -10.825 ; ExecutionModule:em|outNumbers[11] ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.017     ; 11.840     ;
+; -10.820 ; ExecutionModule:em|outNumbers[8]  ; BinaryToBCD:bin2BCD|outBCD[5]  ; clk          ; clk         ; 1.000        ; 0.020      ; 11.872     ;
+; -10.777 ; ExecutionModule:em|outNumbers[15] ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.017     ; 11.792     ;
+; -10.775 ; ExecutionModule:em|outNumbers[12] ; BinaryToBCD:bin2BCD|outBCD[13] ; clk          ; clk         ; 1.000        ; -0.017     ; 11.790     ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                   ;
++-------+---------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; ComputeModule:cm|update                     ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ComputeModule:cm|store                      ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ComputeModule:cm|reset                      ; ComputeModule:cm|reset                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ComputeModule:cm|show                       ; ComputeModule:cm|show                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240 ; ComputeModule:cm|changes[1]                 ; ComputeModule:cm|show                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.242 ; ComputeModule:cm|changes[2]                 ; ComputeModule:cm|cs.S1                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.256 ; Controller:cntrlr|numberOut                 ; ComputeModule:cm|changes[0]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.267 ; BinaryToBCD:bin2BCD|outBCD[10]              ; BCDto7Seg:thirdDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.419      ;
+; 0.269 ; BinaryToBCD:bin2BCD|outBCD[10]              ; BCDto7Seg:thirdDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.421      ;
+; 0.273 ; BinaryToBCD:bin2BCD|outBCD[17]              ; BCDto7Seg:fifthDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.425      ;
+; 0.276 ; BinaryToBCD:bin2BCD|outBCD[17]              ; BCDto7Seg:fifthDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.428      ;
+; 0.278 ; BinaryToBCD:bin2BCD|outBCD[17]              ; BCDto7Seg:fifthDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.430      ;
+; 0.285 ; BinaryToBCD:bin2BCD|outBCD[17]              ; BCDto7Seg:fifthDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.437      ;
+; 0.285 ; BinaryToBCD:bin2BCD|outBCD[17]              ; BCDto7Seg:fifthDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.437      ;
+; 0.305 ; BinaryToBCD:bin2BCD|outBCD[19]              ; BCDto7Seg:fifthDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.457      ;
+; 0.306 ; BinaryToBCD:bin2BCD|outBCD[15]              ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.458      ;
+; 0.306 ; BinaryToBCD:bin2BCD|outBCD[19]              ; BCDto7Seg:fifthDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.458      ;
+; 0.307 ; BinaryToBCD:bin2BCD|outBCD[15]              ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.459      ;
+; 0.309 ; Controller:cntrlr|enterOut                  ; ComputeModule:cm|cs.S1                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.461      ;
+; 0.310 ; BinaryToBCD:bin2BCD|outBCD[15]              ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.462      ;
+; 0.310 ; BinaryToBCD:bin2BCD|outBCD[19]              ; BCDto7Seg:fifthDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.462      ;
+; 0.333 ; ComputeModule:cm|show                       ; ExecutionModule:em|changes[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.485      ;
+; 0.339 ; ComputeModule:cm|store                      ; ExecutionModule:em|changes[2]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.491      ;
+; 0.348 ; Controller:cntrlr|enterOut                  ; ComputeModule:cm|changes[2]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.500      ;
+; 0.348 ; ComputeModule:cm|reset                      ; ExecutionModule:em|changes[1]                ; clk          ; clk         ; 0.000        ; -0.001     ; 0.499      ;
+; 0.354 ; BinaryToBCD:bin2BCD|outBCD[8]               ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.506      ;
+; 0.354 ; BinaryToBCD:bin2BCD|outBCD[8]               ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.506      ;
+; 0.356 ; BinaryToBCD:bin2BCD|outBCD[8]               ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.369 ; ExecutionModule:em|changes[3]               ; ExecutionModule:em|overflow                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.376 ; Controller:cntrlr|enterOut                  ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; BinaryToBCD:bin2BCD|outBCD[10]              ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; BinaryToBCD:bin2BCD|outBCD[14]              ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; BinaryToBCD:bin2BCD|outBCD[14]              ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.381 ; BinaryToBCD:bin2BCD|outBCD[14]              ; BCDto7Seg:fourthDigit|sevenSegOut[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.533      ;
+; 0.382 ; BinaryToBCD:bin2BCD|outBCD[14]              ; BCDto7Seg:fourthDigit|sevenSegOut[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
+; 0.382 ; Controller:cntrlr|enterOut                  ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
+; 0.382 ; BinaryToBCD:bin2BCD|outBCD[14]              ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
+; 0.383 ; BinaryToBCD:bin2BCD|outBCD[11]              ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.535      ;
+; 0.385 ; BinaryToBCD:bin2BCD|outBCD[11]              ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.385 ; BinaryToBCD:bin2BCD|outBCD[11]              ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.386 ; BinaryToBCD:bin2BCD|outBCD[10]              ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.538      ;
+; 0.386 ; BinaryToBCD:bin2BCD|outBCD[10]              ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.538      ;
+; 0.390 ; BinaryToBCD:bin2BCD|outBCD[13]              ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.542      ;
+; 0.390 ; BinaryToBCD:bin2BCD|outBCD[13]              ; BCDto7Seg:fourthDigit|sevenSegOut[3]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.542      ;
+; 0.391 ; BinaryToBCD:bin2BCD|outBCD[13]              ; BCDto7Seg:fourthDigit|sevenSegOut[4]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.543      ;
+; 0.393 ; BinaryToBCD:bin2BCD|outBCD[18]              ; BCDto7Seg:fifthDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.545      ;
+; 0.394 ; ComputeModule:cm|changes[3]                 ; InputModule:im|outputBinNum[10]~_Duplicate_1 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.546      ;
+; 0.394 ; BinaryToBCD:bin2BCD|outBCD[18]              ; BCDto7Seg:fifthDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.546      ;
+; 0.394 ; BinaryToBCD:bin2BCD|outBCD[13]              ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.546      ;
+; 0.395 ; ComputeModule:cm|changes[3]                 ; InputModule:im|outputBinNum[9]~_Duplicate_1  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.547      ;
+; 0.395 ; BinaryToBCD:bin2BCD|outBCD[13]              ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.547      ;
+; 0.397 ; BinaryToBCD:bin2BCD|outBCD[18]              ; BCDto7Seg:fifthDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.549      ;
+; 0.398 ; ComputeModule:cm|changes[3]                 ; InputModule:im|outputBinNum[12]~_Duplicate_1 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.550      ;
+; 0.398 ; ComputeModule:cm|changes[3]                 ; InputModule:im|outputBinNum[8]~_Duplicate_1  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.550      ;
+; 0.403 ; ComputeModule:cm|changes[3]                 ; InputModule:im|outputBinNum[11]~_Duplicate_1 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.555      ;
+; 0.404 ; BinaryToBCD:bin2BCD|outBCD[18]              ; BCDto7Seg:fifthDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.404 ; BinaryToBCD:bin2BCD|outBCD[18]              ; BCDto7Seg:fifthDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.406 ; BinaryToBCD:bin2BCD|outBCD[9]               ; BCDto7Seg:thirdDigit|sevenSegOut[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.558      ;
+; 0.407 ; ExecutionModule:em|temp[13]                 ; ExecutionModule:em|temp[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.559      ;
+; 0.408 ; InputModule:im|validInputs[6]               ; InputModule:im|changes[6]                    ; clk          ; clk         ; 0.000        ; 0.001      ; 0.561      ;
+; 0.414 ; InputModule:im|validInputs[9]               ; InputModule:im|tempOut[0]                    ; clk          ; clk         ; 0.000        ; -0.001     ; 0.565      ;
+; 0.415 ; BinaryToBCD:bin2BCD|outBCD[9]               ; BCDto7Seg:thirdDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.567      ;
+; 0.416 ; BinaryToBCD:bin2BCD|outBCD[9]               ; BCDto7Seg:thirdDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.568      ;
+; 0.416 ; BinaryToBCD:bin2BCD|outBCD[9]               ; BCDto7Seg:thirdDigit|sevenSegOut[5]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.568      ;
+; 0.416 ; BinaryToBCD:bin2BCD|outBCD[9]               ; BCDto7Seg:thirdDigit|sevenSegOut[6]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.568      ;
+; 0.421 ; ComputeModule:cm|changes[0]                 ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.573      ;
+; 0.424 ; ComputeModule:cm|changes[0]                 ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.576      ;
+; 0.436 ; InputModule:im|validInputs[8]               ; InputModule:im|changes[8]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.588      ;
+; 0.445 ; InputModule:im|outputBinNum[4]~_Duplicate_1 ; ExecutionModule:em|temp[4]                   ; clk          ; clk         ; 0.000        ; -0.004     ; 0.593      ;
+; 0.449 ; InputModule:im|validInputs[0]               ; InputModule:im|changes[0]                    ; clk          ; clk         ; 0.000        ; 0.001      ; 0.602      ;
+; 0.451 ; InputModule:im|validInputs[9]               ; InputModule:im|changes[9]                    ; clk          ; clk         ; 0.000        ; -0.001     ; 0.602      ;
+; 0.456 ; ExecutionModule:em|overflow                 ; ExecutionModule:em|errOut                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.608      ;
+; 0.457 ; ComputeModule:cm|changes[2]                 ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.609      ;
+; 0.460 ; ComputeModule:cm|changes[2]                 ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.612      ;
+; 0.464 ; Controller:cntrlr|err                       ; ExecutionModule:em|errOut                    ; clk          ; clk         ; 0.000        ; 0.008      ; 0.624      ;
+; 0.471 ; BinaryToBCD:bin2BCD|outBCD[8]               ; BCDto7Seg:thirdDigit|sevenSegOut[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.623      ;
+; 0.472 ; BinaryToBCD:bin2BCD|outBCD[8]               ; BCDto7Seg:thirdDigit|sevenSegOut[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.624      ;
+; 0.473 ; InputModule:im|changes[9]                   ; InputModule:im|counter[2]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.625      ;
+; 0.475 ; Controller:cntrlr|clearOut                  ; ComputeModule:cm|cs.S2                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.627      ;
+; 0.482 ; InputModule:im|changes[9]                   ; InputModule:im|tempOut[0]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.634      ;
+; 0.482 ; ComputeModule:cm|cs.S1                      ; ComputeModule:cm|store                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.634      ;
+; 0.483 ; ExecutionModule:em|temp[10]                 ; ExecutionModule:em|temp[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.485 ; ComputeModule:cm|cs.S1                      ; ComputeModule:cm|update                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.637      ;
+; 0.490 ; BinaryToBCD:bin2BCD|outBCD[12]              ; BCDto7Seg:fourthDigit|sevenSegOut[6]         ; clk          ; clk         ; 0.000        ; -0.006     ; 0.636      ;
+; 0.491 ; BinaryToBCD:bin2BCD|outBCD[12]              ; BCDto7Seg:fourthDigit|sevenSegOut[3]         ; clk          ; clk         ; 0.000        ; -0.006     ; 0.637      ;
+; 0.492 ; BinaryToBCD:bin2BCD|outBCD[12]              ; BCDto7Seg:fourthDigit|sevenSegOut[4]         ; clk          ; clk         ; 0.000        ; -0.006     ; 0.638      ;
+; 0.494 ; BinaryToBCD:bin2BCD|outBCD[12]              ; BCDto7Seg:fourthDigit|sevenSegOut[0]         ; clk          ; clk         ; 0.000        ; -0.006     ; 0.640      ;
+; 0.495 ; BinaryToBCD:bin2BCD|outBCD[12]              ; BCDto7Seg:fourthDigit|sevenSegOut[5]         ; clk          ; clk         ; 0.000        ; -0.006     ; 0.641      ;
+; 0.506 ; InputModule:im|validInputs[3]               ; InputModule:im|changes[3]                    ; clk          ; clk         ; 0.000        ; 0.002      ; 0.660      ;
+; 0.514 ; ExecutionModule:em|outNumbers[0]            ; BinaryToBCD:bin2BCD|outBCD[0]                ; clk          ; clk         ; 0.000        ; 0.021      ; 0.687      ;
+; 0.515 ; InputModule:im|validInputs[1]               ; InputModule:im|changes[1]                    ; clk          ; clk         ; 0.000        ; 0.002      ; 0.669      ;
+; 0.518 ; ComputeModule:cm|update                     ; ExecutionModule:em|overflow                  ; clk          ; clk         ; 0.000        ; 0.008      ; 0.678      ;
+; 0.519 ; InputModule:im|changes[9]                   ; InputModule:im|counter[0]                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.671      ;
+; 0.524 ; InputModule:im|validInputs[2]               ; InputModule:im|changes[2]                    ; clk          ; clk         ; 0.000        ; 0.002      ; 0.678      ;
+; 0.528 ; InputModule:im|outputBinNum[7]~_Duplicate_1 ; ExecutionModule:em|temp[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
+; 0.528 ; BinaryToBCD:bin2BCD|outBCD[0]               ; BCDto7Seg:firstDigit|sevenSegOut[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
+; 0.529 ; BinaryToBCD:bin2BCD|outBCD[0]               ; BCDto7Seg:firstDigit|sevenSegOut[1]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.530 ; ExecutionModule:em|temp[11]                 ; ExecutionModule:em|temp[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
+; 0.530 ; BinaryToBCD:bin2BCD|outBCD[17]              ; BCDto7Seg:fifthDigit|sevenSegOut[1]          ; clk          ; clk         ; 0.000        ; -0.002     ; 0.680      ;
+; 0.530 ; ComputeModule:cm|changes[0]                 ; ComputeModule:cm|cs.S1                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
++-------+---------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[0]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[0]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[10]        ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[10]        ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[11]        ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[11]        ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[12]        ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[12]        ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[13]        ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[13]        ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[1]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[1]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[2]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[2]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[3]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[3]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[4]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[4]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[5]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[5]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[6]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[6]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[7]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[7]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[8]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[8]         ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; InputModule:im|outputBinNum[9]         ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; InputModule:im|outputBinNum[9]         ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:eighththDigit|sevenSegOut[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fifthDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:firstDigit|sevenSegOut[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:fourthDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:secondDigit|sevenSegOut[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:seventhDigit|sevenSegOut[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:sixthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BCDto7Seg:sixthDigit|sevenSegOut[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BCDto7Seg:sixthDigit|sevenSegOut[2]    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; clear         ; clk        ; 2.249 ; 2.249 ; Rise       ; clk             ;
+; enter         ; clk        ; 2.456 ; 2.456 ; Rise       ; clk             ;
+; inputNums[*]  ; clk        ; 0.861 ; 0.861 ; Rise       ; clk             ;
+;  inputNums[0] ; clk        ; 0.217 ; 0.217 ; Rise       ; clk             ;
+;  inputNums[1] ; clk        ; 0.618 ; 0.618 ; Rise       ; clk             ;
+;  inputNums[2] ; clk        ; 0.493 ; 0.493 ; Rise       ; clk             ;
+;  inputNums[3] ; clk        ; 0.558 ; 0.558 ; Rise       ; clk             ;
+;  inputNums[4] ; clk        ; 0.623 ; 0.623 ; Rise       ; clk             ;
+;  inputNums[5] ; clk        ; 0.549 ; 0.549 ; Rise       ; clk             ;
+;  inputNums[6] ; clk        ; 0.351 ; 0.351 ; Rise       ; clk             ;
+;  inputNums[7] ; clk        ; 0.861 ; 0.861 ; Rise       ; clk             ;
+;  inputNums[8] ; clk        ; 0.694 ; 0.694 ; Rise       ; clk             ;
+;  inputNums[9] ; clk        ; 0.698 ; 0.698 ; Rise       ; clk             ;
+; number        ; clk        ; 2.408 ; 2.408 ; Rise       ; clk             ;
+; total         ; clk        ; 2.367 ; 2.367 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; clear         ; clk        ; -2.127 ; -2.127 ; Rise       ; clk             ;
+; enter         ; clk        ; -2.325 ; -2.325 ; Rise       ; clk             ;
+; inputNums[*]  ; clk        ; 0.467  ; 0.467  ; Rise       ; clk             ;
+;  inputNums[0] ; clk        ; 0.295  ; 0.295  ; Rise       ; clk             ;
+;  inputNums[1] ; clk        ; 0.202  ; 0.202  ; Rise       ; clk             ;
+;  inputNums[2] ; clk        ; 0.195  ; 0.195  ; Rise       ; clk             ;
+;  inputNums[3] ; clk        ; 0.379  ; 0.379  ; Rise       ; clk             ;
+;  inputNums[4] ; clk        ; 0.206  ; 0.206  ; Rise       ; clk             ;
+;  inputNums[5] ; clk        ; 0.046  ; 0.046  ; Rise       ; clk             ;
+;  inputNums[6] ; clk        ; 0.467  ; 0.467  ; Rise       ; clk             ;
+;  inputNums[7] ; clk        ; -0.041 ; -0.041 ; Rise       ; clk             ;
+;  inputNums[8] ; clk        ; -0.101 ; -0.101 ; Rise       ; clk             ;
+;  inputNums[9] ; clk        ; 0.111  ; 0.111  ; Rise       ; clk             ;
+; number        ; clk        ; -2.258 ; -2.258 ; Rise       ; clk             ;
+; total         ; clk        ; -2.237 ; -2.237 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; errOut          ; clk        ; 4.152 ; 4.152 ; Rise       ; clk             ;
+; outNumbers[*]   ; clk        ; 4.742 ; 4.742 ; Rise       ; clk             ;
+;  outNumbers[0]  ; clk        ; 4.114 ; 4.114 ; Rise       ; clk             ;
+;  outNumbers[1]  ; clk        ; 4.394 ; 4.394 ; Rise       ; clk             ;
+;  outNumbers[2]  ; clk        ; 4.394 ; 4.394 ; Rise       ; clk             ;
+;  outNumbers[3]  ; clk        ; 4.101 ; 4.101 ; Rise       ; clk             ;
+;  outNumbers[4]  ; clk        ; 4.114 ; 4.114 ; Rise       ; clk             ;
+;  outNumbers[5]  ; clk        ; 3.978 ; 3.978 ; Rise       ; clk             ;
+;  outNumbers[6]  ; clk        ; 3.976 ; 3.976 ; Rise       ; clk             ;
+;  outNumbers[7]  ; clk        ; 4.742 ; 4.742 ; Rise       ; clk             ;
+;  outNumbers[8]  ; clk        ; 4.471 ; 4.471 ; Rise       ; clk             ;
+;  outNumbers[9]  ; clk        ; 4.164 ; 4.164 ; Rise       ; clk             ;
+;  outNumbers[10] ; clk        ; 4.365 ; 4.365 ; Rise       ; clk             ;
+;  outNumbers[11] ; clk        ; 4.422 ; 4.422 ; Rise       ; clk             ;
+;  outNumbers[12] ; clk        ; 4.656 ; 4.656 ; Rise       ; clk             ;
+;  outNumbers[13] ; clk        ; 4.313 ; 4.313 ; Rise       ; clk             ;
+;  outNumbers[14] ; clk        ; 4.607 ; 4.607 ; Rise       ; clk             ;
+;  outNumbers[15] ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  outNumbers[16] ; clk        ; 4.570 ; 4.570 ; Rise       ; clk             ;
+;  outNumbers[17] ; clk        ; 4.587 ; 4.587 ; Rise       ; clk             ;
+;  outNumbers[18] ; clk        ; 4.263 ; 4.263 ; Rise       ; clk             ;
+;  outNumbers[19] ; clk        ; 4.434 ; 4.434 ; Rise       ; clk             ;
+;  outNumbers[20] ; clk        ; 4.334 ; 4.334 ; Rise       ; clk             ;
+;  outNumbers[21] ; clk        ; 4.170 ; 4.170 ; Rise       ; clk             ;
+;  outNumbers[22] ; clk        ; 4.176 ; 4.176 ; Rise       ; clk             ;
+;  outNumbers[23] ; clk        ; 3.947 ; 3.947 ; Rise       ; clk             ;
+;  outNumbers[24] ; clk        ; 4.330 ; 4.330 ; Rise       ; clk             ;
+;  outNumbers[25] ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
+;  outNumbers[26] ; clk        ; 3.993 ; 3.993 ; Rise       ; clk             ;
+;  outNumbers[27] ; clk        ; 4.309 ; 4.309 ; Rise       ; clk             ;
+;  outNumbers[28] ; clk        ; 3.956 ; 3.956 ; Rise       ; clk             ;
+;  outNumbers[29] ; clk        ; 4.158 ; 4.158 ; Rise       ; clk             ;
+;  outNumbers[30] ; clk        ; 4.205 ; 4.205 ; Rise       ; clk             ;
+;  outNumbers[31] ; clk        ; 4.230 ; 4.230 ; Rise       ; clk             ;
+;  outNumbers[32] ; clk        ; 4.245 ; 4.245 ; Rise       ; clk             ;
+;  outNumbers[33] ; clk        ; 4.245 ; 4.245 ; Rise       ; clk             ;
+;  outNumbers[34] ; clk        ; 4.207 ; 4.207 ; Rise       ; clk             ;
+;  outNumbers[36] ; clk        ; 3.584 ; 3.584 ; Rise       ; clk             ;
+;  outNumbers[37] ; clk        ; 3.579 ; 3.579 ; Rise       ; clk             ;
+;  outNumbers[41] ; clk        ; 3.462 ; 3.462 ; Rise       ; clk             ;
+;  outNumbers[43] ; clk        ; 3.465 ; 3.465 ; Rise       ; clk             ;
+;  outNumbers[44] ; clk        ; 3.461 ; 3.461 ; Rise       ; clk             ;
+;  outNumbers[48] ; clk        ; 3.721 ; 3.721 ; Rise       ; clk             ;
+;  outNumbers[50] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  outNumbers[51] ; clk        ; 3.740 ; 3.740 ; Rise       ; clk             ;
+;  outNumbers[55] ; clk        ; 3.764 ; 3.764 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; errOut          ; clk        ; 4.152 ; 4.152 ; Rise       ; clk             ;
+; outNumbers[*]   ; clk        ; 3.461 ; 3.461 ; Rise       ; clk             ;
+;  outNumbers[0]  ; clk        ; 4.114 ; 4.114 ; Rise       ; clk             ;
+;  outNumbers[1]  ; clk        ; 4.394 ; 4.394 ; Rise       ; clk             ;
+;  outNumbers[2]  ; clk        ; 4.394 ; 4.394 ; Rise       ; clk             ;
+;  outNumbers[3]  ; clk        ; 4.101 ; 4.101 ; Rise       ; clk             ;
+;  outNumbers[4]  ; clk        ; 4.114 ; 4.114 ; Rise       ; clk             ;
+;  outNumbers[5]  ; clk        ; 3.978 ; 3.978 ; Rise       ; clk             ;
+;  outNumbers[6]  ; clk        ; 3.976 ; 3.976 ; Rise       ; clk             ;
+;  outNumbers[7]  ; clk        ; 4.742 ; 4.742 ; Rise       ; clk             ;
+;  outNumbers[8]  ; clk        ; 4.471 ; 4.471 ; Rise       ; clk             ;
+;  outNumbers[9]  ; clk        ; 4.164 ; 4.164 ; Rise       ; clk             ;
+;  outNumbers[10] ; clk        ; 4.365 ; 4.365 ; Rise       ; clk             ;
+;  outNumbers[11] ; clk        ; 4.422 ; 4.422 ; Rise       ; clk             ;
+;  outNumbers[12] ; clk        ; 4.656 ; 4.656 ; Rise       ; clk             ;
+;  outNumbers[13] ; clk        ; 4.313 ; 4.313 ; Rise       ; clk             ;
+;  outNumbers[14] ; clk        ; 4.607 ; 4.607 ; Rise       ; clk             ;
+;  outNumbers[15] ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  outNumbers[16] ; clk        ; 4.570 ; 4.570 ; Rise       ; clk             ;
+;  outNumbers[17] ; clk        ; 4.587 ; 4.587 ; Rise       ; clk             ;
+;  outNumbers[18] ; clk        ; 4.263 ; 4.263 ; Rise       ; clk             ;
+;  outNumbers[19] ; clk        ; 4.434 ; 4.434 ; Rise       ; clk             ;
+;  outNumbers[20] ; clk        ; 4.334 ; 4.334 ; Rise       ; clk             ;
+;  outNumbers[21] ; clk        ; 4.170 ; 4.170 ; Rise       ; clk             ;
+;  outNumbers[22] ; clk        ; 4.176 ; 4.176 ; Rise       ; clk             ;
+;  outNumbers[23] ; clk        ; 3.947 ; 3.947 ; Rise       ; clk             ;
+;  outNumbers[24] ; clk        ; 4.330 ; 4.330 ; Rise       ; clk             ;
+;  outNumbers[25] ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
+;  outNumbers[26] ; clk        ; 3.993 ; 3.993 ; Rise       ; clk             ;
+;  outNumbers[27] ; clk        ; 4.309 ; 4.309 ; Rise       ; clk             ;
+;  outNumbers[28] ; clk        ; 3.956 ; 3.956 ; Rise       ; clk             ;
+;  outNumbers[29] ; clk        ; 4.158 ; 4.158 ; Rise       ; clk             ;
+;  outNumbers[30] ; clk        ; 4.205 ; 4.205 ; Rise       ; clk             ;
+;  outNumbers[31] ; clk        ; 4.230 ; 4.230 ; Rise       ; clk             ;
+;  outNumbers[32] ; clk        ; 4.245 ; 4.245 ; Rise       ; clk             ;
+;  outNumbers[33] ; clk        ; 4.245 ; 4.245 ; Rise       ; clk             ;
+;  outNumbers[34] ; clk        ; 4.207 ; 4.207 ; Rise       ; clk             ;
+;  outNumbers[36] ; clk        ; 3.584 ; 3.584 ; Rise       ; clk             ;
+;  outNumbers[37] ; clk        ; 3.579 ; 3.579 ; Rise       ; clk             ;
+;  outNumbers[41] ; clk        ; 3.462 ; 3.462 ; Rise       ; clk             ;
+;  outNumbers[43] ; clk        ; 3.465 ; 3.465 ; Rise       ; clk             ;
+;  outNumbers[44] ; clk        ; 3.461 ; 3.461 ; Rise       ; clk             ;
+;  outNumbers[48] ; clk        ; 3.721 ; 3.721 ; Rise       ; clk             ;
+;  outNumbers[50] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  outNumbers[51] ; clk        ; 3.740 ; 3.740 ; Rise       ; clk             ;
+;  outNumbers[55] ; clk        ; 3.764 ; 3.764 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -36.563   ; 0.215 ; N/A      ; N/A     ; -1.519              ;
+;  clk             ; -36.563   ; 0.215 ; N/A      ; N/A     ; -1.519              ;
+; Design-wide TNS  ; -1664.759 ; 0.0   ; 0.0      ; 0.0     ; -213.912            ;
+;  clk             ; -1664.759 ; 0.000 ; N/A      ; N/A     ; -213.912            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; clear         ; clk        ; 4.090 ; 4.090 ; Rise       ; clk             ;
+; enter         ; clk        ; 4.588 ; 4.588 ; Rise       ; clk             ;
+; inputNums[*]  ; clk        ; 2.420 ; 2.420 ; Rise       ; clk             ;
+;  inputNums[0] ; clk        ; 1.148 ; 1.148 ; Rise       ; clk             ;
+;  inputNums[1] ; clk        ; 2.054 ; 2.054 ; Rise       ; clk             ;
+;  inputNums[2] ; clk        ; 1.792 ; 1.792 ; Rise       ; clk             ;
+;  inputNums[3] ; clk        ; 1.870 ; 1.870 ; Rise       ; clk             ;
+;  inputNums[4] ; clk        ; 2.005 ; 2.005 ; Rise       ; clk             ;
+;  inputNums[5] ; clk        ; 1.911 ; 1.911 ; Rise       ; clk             ;
+;  inputNums[6] ; clk        ; 1.481 ; 1.481 ; Rise       ; clk             ;
+;  inputNums[7] ; clk        ; 2.420 ; 2.420 ; Rise       ; clk             ;
+;  inputNums[8] ; clk        ; 2.029 ; 2.029 ; Rise       ; clk             ;
+;  inputNums[9] ; clk        ; 2.046 ; 2.046 ; Rise       ; clk             ;
+; number        ; clk        ; 4.439 ; 4.439 ; Rise       ; clk             ;
+; total         ; clk        ; 4.365 ; 4.365 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; clear         ; clk        ; -2.127 ; -2.127 ; Rise       ; clk             ;
+; enter         ; clk        ; -2.325 ; -2.325 ; Rise       ; clk             ;
+; inputNums[*]  ; clk        ; 0.467  ; 0.467  ; Rise       ; clk             ;
+;  inputNums[0] ; clk        ; 0.295  ; 0.295  ; Rise       ; clk             ;
+;  inputNums[1] ; clk        ; 0.202  ; 0.202  ; Rise       ; clk             ;
+;  inputNums[2] ; clk        ; 0.195  ; 0.195  ; Rise       ; clk             ;
+;  inputNums[3] ; clk        ; 0.379  ; 0.379  ; Rise       ; clk             ;
+;  inputNums[4] ; clk        ; 0.206  ; 0.206  ; Rise       ; clk             ;
+;  inputNums[5] ; clk        ; 0.046  ; 0.046  ; Rise       ; clk             ;
+;  inputNums[6] ; clk        ; 0.467  ; 0.467  ; Rise       ; clk             ;
+;  inputNums[7] ; clk        ; -0.041 ; -0.041 ; Rise       ; clk             ;
+;  inputNums[8] ; clk        ; -0.101 ; -0.101 ; Rise       ; clk             ;
+;  inputNums[9] ; clk        ; 0.111  ; 0.111  ; Rise       ; clk             ;
+; number        ; clk        ; -2.258 ; -2.258 ; Rise       ; clk             ;
+; total         ; clk        ; -2.237 ; -2.237 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; errOut          ; clk        ; 7.368 ; 7.368 ; Rise       ; clk             ;
+; outNumbers[*]   ; clk        ; 8.694 ; 8.694 ; Rise       ; clk             ;
+;  outNumbers[0]  ; clk        ; 7.318 ; 7.318 ; Rise       ; clk             ;
+;  outNumbers[1]  ; clk        ; 7.925 ; 7.925 ; Rise       ; clk             ;
+;  outNumbers[2]  ; clk        ; 7.912 ; 7.912 ; Rise       ; clk             ;
+;  outNumbers[3]  ; clk        ; 7.303 ; 7.303 ; Rise       ; clk             ;
+;  outNumbers[4]  ; clk        ; 7.320 ; 7.320 ; Rise       ; clk             ;
+;  outNumbers[5]  ; clk        ; 7.054 ; 7.054 ; Rise       ; clk             ;
+;  outNumbers[6]  ; clk        ; 7.049 ; 7.049 ; Rise       ; clk             ;
+;  outNumbers[7]  ; clk        ; 8.685 ; 8.685 ; Rise       ; clk             ;
+;  outNumbers[8]  ; clk        ; 8.147 ; 8.147 ; Rise       ; clk             ;
+;  outNumbers[9]  ; clk        ; 7.528 ; 7.528 ; Rise       ; clk             ;
+;  outNumbers[10] ; clk        ; 7.969 ; 7.969 ; Rise       ; clk             ;
+;  outNumbers[11] ; clk        ; 8.061 ; 8.061 ; Rise       ; clk             ;
+;  outNumbers[12] ; clk        ; 8.694 ; 8.694 ; Rise       ; clk             ;
+;  outNumbers[13] ; clk        ; 7.767 ; 7.767 ; Rise       ; clk             ;
+;  outNumbers[14] ; clk        ; 8.478 ; 8.478 ; Rise       ; clk             ;
+;  outNumbers[15] ; clk        ; 7.961 ; 7.961 ; Rise       ; clk             ;
+;  outNumbers[16] ; clk        ; 8.323 ; 8.323 ; Rise       ; clk             ;
+;  outNumbers[17] ; clk        ; 8.392 ; 8.392 ; Rise       ; clk             ;
+;  outNumbers[18] ; clk        ; 7.675 ; 7.675 ; Rise       ; clk             ;
+;  outNumbers[19] ; clk        ; 8.128 ; 8.128 ; Rise       ; clk             ;
+;  outNumbers[20] ; clk        ; 7.873 ; 7.873 ; Rise       ; clk             ;
+;  outNumbers[21] ; clk        ; 7.549 ; 7.549 ; Rise       ; clk             ;
+;  outNumbers[22] ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  outNumbers[23] ; clk        ; 7.034 ; 7.034 ; Rise       ; clk             ;
+;  outNumbers[24] ; clk        ; 7.972 ; 7.972 ; Rise       ; clk             ;
+;  outNumbers[25] ; clk        ; 7.961 ; 7.961 ; Rise       ; clk             ;
+;  outNumbers[26] ; clk        ; 7.198 ; 7.198 ; Rise       ; clk             ;
+;  outNumbers[27] ; clk        ; 7.945 ; 7.945 ; Rise       ; clk             ;
+;  outNumbers[28] ; clk        ; 7.053 ; 7.053 ; Rise       ; clk             ;
+;  outNumbers[29] ; clk        ; 7.528 ; 7.528 ; Rise       ; clk             ;
+;  outNumbers[30] ; clk        ; 7.568 ; 7.568 ; Rise       ; clk             ;
+;  outNumbers[31] ; clk        ; 7.750 ; 7.750 ; Rise       ; clk             ;
+;  outNumbers[32] ; clk        ; 7.764 ; 7.764 ; Rise       ; clk             ;
+;  outNumbers[33] ; clk        ; 7.763 ; 7.763 ; Rise       ; clk             ;
+;  outNumbers[34] ; clk        ; 7.664 ; 7.664 ; Rise       ; clk             ;
+;  outNumbers[36] ; clk        ; 6.368 ; 6.368 ; Rise       ; clk             ;
+;  outNumbers[37] ; clk        ; 6.354 ; 6.354 ; Rise       ; clk             ;
+;  outNumbers[41] ; clk        ; 6.077 ; 6.077 ; Rise       ; clk             ;
+;  outNumbers[43] ; clk        ; 6.083 ; 6.083 ; Rise       ; clk             ;
+;  outNumbers[44] ; clk        ; 6.071 ; 6.071 ; Rise       ; clk             ;
+;  outNumbers[48] ; clk        ; 6.596 ; 6.596 ; Rise       ; clk             ;
+;  outNumbers[50] ; clk        ; 6.634 ; 6.634 ; Rise       ; clk             ;
+;  outNumbers[51] ; clk        ; 6.628 ; 6.628 ; Rise       ; clk             ;
+;  outNumbers[55] ; clk        ; 6.642 ; 6.642 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; errOut          ; clk        ; 4.152 ; 4.152 ; Rise       ; clk             ;
+; outNumbers[*]   ; clk        ; 3.461 ; 3.461 ; Rise       ; clk             ;
+;  outNumbers[0]  ; clk        ; 4.114 ; 4.114 ; Rise       ; clk             ;
+;  outNumbers[1]  ; clk        ; 4.394 ; 4.394 ; Rise       ; clk             ;
+;  outNumbers[2]  ; clk        ; 4.394 ; 4.394 ; Rise       ; clk             ;
+;  outNumbers[3]  ; clk        ; 4.101 ; 4.101 ; Rise       ; clk             ;
+;  outNumbers[4]  ; clk        ; 4.114 ; 4.114 ; Rise       ; clk             ;
+;  outNumbers[5]  ; clk        ; 3.978 ; 3.978 ; Rise       ; clk             ;
+;  outNumbers[6]  ; clk        ; 3.976 ; 3.976 ; Rise       ; clk             ;
+;  outNumbers[7]  ; clk        ; 4.742 ; 4.742 ; Rise       ; clk             ;
+;  outNumbers[8]  ; clk        ; 4.471 ; 4.471 ; Rise       ; clk             ;
+;  outNumbers[9]  ; clk        ; 4.164 ; 4.164 ; Rise       ; clk             ;
+;  outNumbers[10] ; clk        ; 4.365 ; 4.365 ; Rise       ; clk             ;
+;  outNumbers[11] ; clk        ; 4.422 ; 4.422 ; Rise       ; clk             ;
+;  outNumbers[12] ; clk        ; 4.656 ; 4.656 ; Rise       ; clk             ;
+;  outNumbers[13] ; clk        ; 4.313 ; 4.313 ; Rise       ; clk             ;
+;  outNumbers[14] ; clk        ; 4.607 ; 4.607 ; Rise       ; clk             ;
+;  outNumbers[15] ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  outNumbers[16] ; clk        ; 4.570 ; 4.570 ; Rise       ; clk             ;
+;  outNumbers[17] ; clk        ; 4.587 ; 4.587 ; Rise       ; clk             ;
+;  outNumbers[18] ; clk        ; 4.263 ; 4.263 ; Rise       ; clk             ;
+;  outNumbers[19] ; clk        ; 4.434 ; 4.434 ; Rise       ; clk             ;
+;  outNumbers[20] ; clk        ; 4.334 ; 4.334 ; Rise       ; clk             ;
+;  outNumbers[21] ; clk        ; 4.170 ; 4.170 ; Rise       ; clk             ;
+;  outNumbers[22] ; clk        ; 4.176 ; 4.176 ; Rise       ; clk             ;
+;  outNumbers[23] ; clk        ; 3.947 ; 3.947 ; Rise       ; clk             ;
+;  outNumbers[24] ; clk        ; 4.330 ; 4.330 ; Rise       ; clk             ;
+;  outNumbers[25] ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
+;  outNumbers[26] ; clk        ; 3.993 ; 3.993 ; Rise       ; clk             ;
+;  outNumbers[27] ; clk        ; 4.309 ; 4.309 ; Rise       ; clk             ;
+;  outNumbers[28] ; clk        ; 3.956 ; 3.956 ; Rise       ; clk             ;
+;  outNumbers[29] ; clk        ; 4.158 ; 4.158 ; Rise       ; clk             ;
+;  outNumbers[30] ; clk        ; 4.205 ; 4.205 ; Rise       ; clk             ;
+;  outNumbers[31] ; clk        ; 4.230 ; 4.230 ; Rise       ; clk             ;
+;  outNumbers[32] ; clk        ; 4.245 ; 4.245 ; Rise       ; clk             ;
+;  outNumbers[33] ; clk        ; 4.245 ; 4.245 ; Rise       ; clk             ;
+;  outNumbers[34] ; clk        ; 4.207 ; 4.207 ; Rise       ; clk             ;
+;  outNumbers[36] ; clk        ; 3.584 ; 3.584 ; Rise       ; clk             ;
+;  outNumbers[37] ; clk        ; 3.579 ; 3.579 ; Rise       ; clk             ;
+;  outNumbers[41] ; clk        ; 3.462 ; 3.462 ; Rise       ; clk             ;
+;  outNumbers[43] ; clk        ; 3.465 ; 3.465 ; Rise       ; clk             ;
+;  outNumbers[44] ; clk        ; 3.461 ; 3.461 ; Rise       ; clk             ;
+;  outNumbers[48] ; clk        ; 3.721 ; 3.721 ; Rise       ; clk             ;
+;  outNumbers[50] ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+;  outNumbers[51] ; clk        ; 3.740 ; 3.740 ; Rise       ; clk             ;
+;  outNumbers[55] ; clk        ; 3.764 ; 3.764 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 14    ; 14   ;
+; Unconstrained Input Port Paths  ; 120   ; 120  ;
+; Unconstrained Output Ports      ; 45    ; 45   ;
+; Unconstrained Output Port Paths ; 45    ; 45   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Jan 17 14:14:51 2016
+Info: Command: quartus_sta LogicFinalFPGA -c LogicFinalFPGA
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'LogicFinalFPGA.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -36.563
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -36.563     -1664.759 clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.423
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.423      -211.224 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -15.402
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -15.402      -641.950 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.519
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.519      -213.912 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 316 megabytes
+    Info: Processing ended: Sun Jan 17 14:14:54 2016
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

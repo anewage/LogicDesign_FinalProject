@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="LogicFinalFPGA">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_0dm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Mod3" CBX_FILE_NAME="lpm_divide_58m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_dem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_2gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_k6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_18m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Mod4" CBX_FILE_NAME="lpm_divide_88m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|ExecutionModule:em|lpm_mult:Mult0" CBX_FILE_NAME="mult_i8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_rfm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MainModule|BinaryToBCD:bin2BCD|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_n6m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

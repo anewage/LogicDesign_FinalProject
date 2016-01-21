@@ -1,0 +1,6 @@
+
+State Machine - |MainModule|ComputeModule:cm|cs
+Name cs.S1 cs.S2 cs.S0 
+cs.S0 0 0 0 
+cs.S1 1 0 1 
+cs.S2 0 1 1 
